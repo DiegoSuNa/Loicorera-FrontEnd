@@ -12,4 +12,5 @@ export class InventarioComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

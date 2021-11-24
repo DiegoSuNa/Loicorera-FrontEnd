@@ -24,44 +24,19 @@
         <th scope="col">Unidad de Medida</th>
         <th scope="col">Precio</th>
         <th scope="col">Fecha de Vencimiento</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>nombre</td>
-        <td>tipo</td>
-        <td>cantidad</td>
-        <td>unidadMedida</td>
-        <td>precio</td>
-        <td>fecha</td>
+      <tr *ngFor="let inventario of inventarios; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{inventario.nombreProducto}} </td>
+        <td>{{inventario.tipoProducto}}</td>
+        <td>{{inventario.cantidadProducto}}</td>
+        <td>{{inventario.unidadMedidaProducto}}</td>
+        <td>{{inventario.precio}}</td>
+        <td>{{inventario.fechaVencimiento}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="eliminarProductos(inventario.idInventario)">Eliminar</button></td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>nombre</td>
-        <td>tipo</td>
-        <td>cantidad</td>
-        <td>unidadMedida</td>
-        <td>precio</td>
-        <td>fecha</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>nombre</td>
-        <td>tipo</td>
-        <td>cantidad</td>
-        <td>unidadMedida</td>
-        <td>precio</td>
-        <td>fecha</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>nombre</td>
-        <td>tipo</td>
-        <td>cantidad</td>
-        <td>unidadMedida</td>
-        <td>precio</td>
-        <td>fecha</td>
-      </tr>
-    </tbody>
+    </tbody>   
   </table>

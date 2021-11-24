@@ -1,0 +1,32 @@
+<div class="controlador">
+<h1>Agregar prooducto</h1>
+</div>
+<form [formGroup]= "formGroup">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre Producto</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="nombreProducto">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Tipo Producto</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="tipoProducto">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Cantidad</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="cantidadProducto">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Unidad de Medida</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="unidadMedidaProducto">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Precio</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="precio">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Fecha de Vencimiento</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="fechaVencimiento">
+      </div>
+      <button type="button" class="btn btn-primary" [disabled]="formGroup.invalid" (click)="agregarProductos()">Agregar</button>
+      
+  </form>
+

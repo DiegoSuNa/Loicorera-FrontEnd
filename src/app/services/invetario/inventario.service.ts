@@ -9,12 +9,18 @@ export class InventarioService {
 
   constructor(private http: HttpClient) { }
 
-  public obtenerProductos () :Promise<any> {
+  public obtenerProductos() :Promise<any> {
     const url = `${environment.apiUrl}/obtenerProductos`
     return this.http.get(url).toPromise();
   }
   public obtenerProducto(id: number){}
-  public agregarProductos(producto: any){}
+  public agregarProductos(producto: any){
+    const url =`${environment.apiUrl}/agregarProductos`
+    return this.http.post(url, producto).toPromise();
+  }
   public actualizarProductos(producto: any){}
-  public eliminarProductos(id: number){}
+  
+  public eliminarProductos(id: number):Promise<any> {
+    return this.http.delete(`${environment.apiUrl}/eliminarProductos/${id}`).toPromise();
+  }
 }

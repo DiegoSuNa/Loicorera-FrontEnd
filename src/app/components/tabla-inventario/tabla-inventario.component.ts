@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { InventarioService } from 'src/app/services/invetario/inventario.service';
+import { Router } from '@angular/router';
 import { InventarioComponent } from '../inventario/inventario.component';
+import { InventarioModel } from 'src/app/models/inventarios'
 
 @Component({
   selector: 'app-tabla-inventario',
@@ -9,21 +11,33 @@ import { InventarioComponent } from '../inventario/inventario.component';
 })
 export class TablaInventarioComponent implements OnInit {
 
-  constructor(private invetarioService: InventarioService) { }
+  public inventarios: InventarioModel[] = [];
 
-  ngOnInit(): void {
-    console.log('controlador')
-    this.obtenerProductos();
+  constructor(private invetarioService: InventarioService, private router: Router) { }
+
+  async ngOnInit(): Promise<void> {
+    this.inventarios = await this.obtenerProductos();
   }
- 
-  public async obtenerProductos(){
+
+  public async obtenerProductos(): Promise<any>{
    try{
    const response = await this.invetarioService.obtenerProductos();
-    console.log(response)
+    return response.data;
    }catch(error){
-     console.log(error)
+     this.router.navigate(['/error'])
 
    }
   }
 
+  public eliminarProductos(id:number){
+    this.invetarioService.eliminarProductos(id).then(async response => {
+      if(response.message === 'deleted'){
+        this.inventarios = await this.obtenerProductos();
+        alert('Producto eliminado correctamente');
+      }
+    }).catch(error => {
+      this.router.navigate(['/error']);
+    })
+  }
 }
+

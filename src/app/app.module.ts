@@ -17,6 +17,10 @@ import { InventarioComponent } from './components/inventario/inventario.componen
 import { HttpClientModule } from '@angular/common/http';
 import { InventarioService } from './services/invetario/inventario.service';
 import { ProveedorService } from './services/proveedor/proveedor.service';
+import { ErrorComponent } from './components/error/error.component';
+import { InicioComponent } from './components/inicio/inicio.component';
+import { FormularioInventarioComponent } from './components/formulario-inventario/formulario-inventario.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,12 +34,16 @@ import { ProveedorService } from './services/proveedor/proveedor.service';
     InformeVentaComponent,
     InformeSnackComponent,
     PerfilComponent,
-    InventarioComponent
+    InventarioComponent,
+    ErrorComponent,
+    InicioComponent,
+    FormularioInventarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [InventarioService,ProveedorService],
   bootstrap: [AppComponent]
