@@ -10,7 +10,10 @@ export class InventarioComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
-
+  public actualizarFormulario(){
+    localStorage.clear()
+  }
 }

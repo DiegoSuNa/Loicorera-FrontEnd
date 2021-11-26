@@ -1,9 +1,11 @@
 .footer {
+    
     position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
     text-align: center;
+    background-color: rgb(15, 15, 15)
 }
 #texto{
       margin-top: 15px;

@@ -1,30 +1,31 @@
-<h1 id="text">Inventario</h1>
-<div class="container-fluid">
+
+<h1 id="text">INVENTARIO</h1>
+<div class="container-fluid space">
   <form class="d-flex">
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
 </div>
-<table class="table table-success table-striped space">
+
+<table class="table table table-striped space">
     <thead>
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">Nombre</th>
+      <th scope="col">id</th>
+        <th scope="col">NOMBRE</th>
         <th class="nav-item dropdown">
           <a class="nav-item dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            Tipo licor
+            TIPO LICOR
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item">AGUARDIENTE</a></li>
             <li><a class="dropdown-item">CERVEZA</a></li>
             <li><a class="dropdown-item">WHISKY</a></li>
           </ul>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Unidad de Medida</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Fecha de Vencimiento</th>
-        <th scope="col"></th>
+        <th scope="col">CANTIDAD</th>
+        <th scope="col">UNIDAD DE MEDIDA</th>
+        <th scope="col">PRECIO</th>
+        <th scope="col">FECHA DE VENCIMINETO</th>
+      <tr>  
       </tr>
     </thead>
     <tbody>
@@ -36,7 +37,7 @@
         <td>{{inventario.unidadMedidaProducto}}</td>
         <td>{{inventario.precio}}</td>
         <td>{{inventario.fechaVencimiento}}</td>
-        <td><button type="button" class="btn btn-danger" (click)="eliminarProductos(inventario.idInventario)">Eliminar</button></td>
-      </tr>
-    </tbody>   
+        <td><button type="button" class="btn btn-danger" (click)="eliminarProductos(inventario.idInventario)">ELIMINAR</button></td>
+        <td><button type="button" class="btn btn-dark" (click)="irActualizarProducto(inventario)">ACTUALIZAR</button></td>
+      </tr>  
   </table>

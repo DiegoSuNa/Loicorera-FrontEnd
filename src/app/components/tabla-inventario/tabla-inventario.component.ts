@@ -39,5 +39,9 @@ export class TablaInventarioComponent implements OnInit {
       this.router.navigate(['/error']);
     })
   }
+  public irActualizarProducto(producto: InventarioModel){
+    localStorage.setItem('productoActualizar', JSON.stringify(producto));
+    this.router.navigate(['/formulario-inventario']);
+  }
 }
 
