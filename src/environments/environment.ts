@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://licorera-b12-mintic.herokuapp.com/'
+  apiUrl: 'http://localhost:3000'
 };
 
 
